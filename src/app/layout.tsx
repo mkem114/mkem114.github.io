@@ -1,0 +1,38 @@
+import './globals.css'
+import {Inter} from 'next/font/google'
+
+const inter = Inter({ subsets: ['latin'] })
+
+export const metadata = {
+  title: 'mkem114',
+  description: 'A somewhat personal site',
+}
+
+type Props = {
+  params: { id: string };
+  searchParams: { [key: string]: string | string[] | undefined };
+};
+
+// export async function generateMetadata(
+//   { params, searchParams }: Props,
+//   parent?: ResolvingMetadata,
+// ): Promise<Metadata> {
+//   // read route params
+//   const id = params.id;
+//
+//   return {
+//     title: id,
+//   };
+// }
+
+export default function RootLayout({
+  children,
+}: {
+  children: React.ReactNode
+}) {
+  return (
+    <html lang="en">
+      <body className={inter.className}>{children}</body>
+    </html>
+  )
+}
